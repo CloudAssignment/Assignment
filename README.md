@@ -2,7 +2,7 @@
 
 ## Implementing changes:
 
-- step 1: Fork this repo
+- step 1: Download this repo
 - step 2: On your local computer navigate to the terminal and type git clone followed by the url of the fork 
 (eg: git clone https://github.com/YOURUSERNAMECloudAssignment/Assignment/)
 - step 3: from here edit the code locally implementing whatever changes are necessary.
