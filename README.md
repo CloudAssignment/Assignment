@@ -11,4 +11,3 @@ next type "git commit -m "your message" " ; you should see your changes
 click "compare and pull request", next if its able to merge with master do so and comment on your merge.
 
 
-COCKS xD
