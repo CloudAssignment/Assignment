@@ -10,4 +10,8 @@ next type "git commit -m "your message" " ; you should see your changes
 - step 5: next navigate to your github forked page, at the top you should see something about changes being implemented,
 click "compare and pull request", next if its able to merge with master do so and comment on your merge.
 
+<<<<<<< HEAD
+SEBGAY
+=======
 
+>>>>>>> 0d9e3bc9e76ad473f1ea6d5e71d16cd130b646e7
