@@ -1,5 +1,6 @@
 from math import inf
 import time
+import matplotlib.pyplot as plt
 File_object = open("graphdata.txt" , "a")
 
 t0 = time.time()
@@ -70,7 +71,7 @@ class Dijkstra:
 
     def read_graph(self):
         g = {}
-        filename = 'C:\\Users\\evand\\Desktop\\Cloud\\graph2.txt'
+        filename = 'C:\\Users\\evand\\Documents\\GitHub\\Assignment\\cloud_Evan1\\graph2.txt'
         try:
             with open(filename, 'r') as graph_data:
                 data = graph_data.read().splitlines()  # read all lines and remove ending '\n'
@@ -144,7 +145,7 @@ class Dijkstra:
         #print('\n=======\nSummary\n=======\n\nVertex\tCost\tPreceding Vertex')
         #for vertex, distance in self.distances.items():
         #    print("{}\t{}\t{}".format(vertex, distance, self.predecessor[vertex]))
-
+File_object.truncate()
 for i in range(1,1001):
     d = Dijkstra()
     d.main()
@@ -155,3 +156,20 @@ for i in range(1,1001):
     total = str(round(total, 4))
     File_object.write(str(total)+" "+str(i)+"\n")
     print(total)
+
+time.sleep(2)
+import matplotlib.pyplot as plt
+
+X, Y = [], []
+for line in open("graphdata.txt", 'r'):
+    values = [float(s) for s in line.split()]
+    X.append(values[0])
+    Y.append(values[1])
+
+plt.plot(Y, X)
+plt.title("Execution Time")
+plt.xlabel("Run Count")
+plt.ylabel("Time(s)")
+plt.ylim(ymin=0)
+plt.xlim(xmin=0)
+plt.show()
