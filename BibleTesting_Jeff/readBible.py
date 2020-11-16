@@ -39,7 +39,8 @@ outfile.close()
 times = {
     "ubuntu" :0,
     "windows":0,
-    "virtualbox":0,
+    "ubuntuvm":0,
+    "windowsvm":0,
     "docker":0
     }
 
@@ -55,9 +56,12 @@ for line in infile1:
     if words[0] == "windows":
         time1 = words[1]
         times["windows"] = (float(time1))
-    if words[0] == "virtualbox":
+    if words[0] == "windowsvm":
         time1 = words[1]
-        times["virtualbox"] = (float(time1))
+        times["windowsvm"] = (float(time1))
+    if words[0] == "ubuntuvm":
+        time1 = words[1]
+        times["ubuntuvm"] = (float(time1))
     if words[0] == "docker":
         time1 = words[1]
         times["docker"] = (float(time1))
