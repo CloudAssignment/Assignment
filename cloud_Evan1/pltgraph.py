@@ -7,6 +7,9 @@ for line in open("graphdata.txt", 'r'):
     Y.append(values[1])
 
 plt.plot(Y, X)
+plt.title("Execution Time")
+plt.xlabel("Run Count")
+plt.ylabel("Time(s)")
 plt.ylim(ymin=0)
 plt.xlim(xmin=0)
 plt.show()
