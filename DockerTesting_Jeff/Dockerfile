@@ -3,7 +3,8 @@
 # In our example, we want import the python image.
 # So we write 'python' for the image name and 'latest' for the version.
 FROM python:latest
-
+RUN pip install matplotlib
+RUN pip install numpy
 # In order to launch our python code, we must import it into our image.
 # We use the keyword 'COPY' to do that.
 # The first parameter 'main.py' is the name of the file on the host.
@@ -11,6 +12,7 @@ FROM python:latest
 # Here we put the file at the image root folder.
 COPY readBible.py /
 COPY bible.txt /
+COPY results.txt /
 # We need to define the command to launch when we are going to run the image.
 # We use the keyword 'CMD' to do that.
 # The following command will execute "python ./main.py".
