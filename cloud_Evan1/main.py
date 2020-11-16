@@ -1,7 +1,9 @@
 from math import inf
 import time
+
+result = 0
 import matplotlib.pyplot as plt
-File_object = open("graphdata.txt" , "a")
+File_object = open("graphdata.txt", "w")
 
 t0 = time.time()
 class MinHeapArrayBased:
@@ -71,7 +73,7 @@ class Dijkstra:
 
     def read_graph(self):
         g = {}
-        filename = 'C:\\Users\\evand\\Documents\\GitHub\\Assignment\\cloud_Evan1\\graph2.txt'
+        filename = 'graph2.txt'
         try:
             with open(filename, 'r') as graph_data:
                 data = graph_data.read().splitlines()  # read all lines and remove ending '\n'
@@ -151,25 +153,12 @@ for i in range(1,1001):
     d.main()
 
     t1 = time.time()
-
     total = t1-t0
+    result += total
     total = str(round(total, 4))
     File_object.write(str(total)+" "+str(i)+"\n")
     print(total)
 
+result = result/1000
+print("Average of 1000 runs: " + str(result))
 time.sleep(2)
-import matplotlib.pyplot as plt
-
-X, Y = [], []
-for line in open("graphdata.txt", 'r'):
-    values = [float(s) for s in line.split()]
-    X.append(values[0])
-    Y.append(values[1])
-
-plt.plot(Y, X)
-plt.title("Execution Time")
-plt.xlabel("Run Count")
-plt.ylabel("Time(s)")
-plt.ylim(ymin=0)
-plt.xlim(xmin=0)
-plt.show()
